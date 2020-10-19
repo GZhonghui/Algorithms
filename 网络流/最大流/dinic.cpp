@@ -1,9 +1,8 @@
-#include<iostream>
-#include<cstdio>
 #include<algorithm>
-#include<queue>
-#include<vector>
 #include<cstring>
+#include<vector>
+#include<cstdio>
+#include<queue>
 using namespace std;
 const int maxn=1024;
 const int inf=0xffffff;
@@ -81,7 +80,7 @@ struct Dinic
 		}
 		return ans;
 	}
-}ac;
+};
 int main()
 {
 	return 0;
