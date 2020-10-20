@@ -1,7 +1,6 @@
-#include<iostream>
-#include<cstdio>
 #include<algorithm>
 #include<cstring>
+#include<cstdio>
 using namespace std;
 const int maxn=1024;
 int N,Data[maxn];

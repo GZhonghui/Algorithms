@@ -1,7 +1,6 @@
-#include<iostream>
-#include<cstdio>
 #include<algorithm>
 #include<cstring>
+#include<cstdio>
 #include<queue>
 #include<vector>
 using namespace std;
@@ -79,7 +78,7 @@ struct Dinic
         while(BellmanFord(flow,cost));
         return cost;
     }
-}ac;
+};
 int main()
 {
 	return 0;

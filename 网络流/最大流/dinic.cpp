@@ -9,6 +9,8 @@ const int inf=0xffffff;
 struct Edge
 {
     int from,to,cap,flow;
+    Edge(int from,int to,int cap,int flow):
+        from(from),to(to),cap(cap),flow(flow){}
 };
 struct Dinic
 {
@@ -24,8 +26,8 @@ struct Dinic
     }
     void AddEdge(int from,int to,int cap)
     {
-        edges.push_back((Edge){from,to,cap,0});
-        edges.push_back((Edge){to,from,0,0});
+        edges.push_back(Edge(from,to,cap,0));
+        edges.push_back(Edge(to,from,0,0));
         G[from].push_back(edges.size()-2);
         G[to].push_back(edges.size()-1);
     }
