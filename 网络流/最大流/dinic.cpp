@@ -4,20 +4,26 @@
 #include<cstdio>
 #include<queue>
 using namespace std;
+
 const int maxn=1024;
 const int inf=0xffffff;
+
 struct Edge
 {
     int from,to,cap,flow;
     Edge(int from,int to,int cap,int flow):
         from(from),to(to),cap(cap),flow(flow){}
 };
-struct Dinic
+
+class Dinic
 {
-    vector<int> G[maxn];
+public:
     vector<Edge> edges;
-    bool vis[maxn];
+    vector<int> G[maxn];
     int s,t,d[maxn],cur[maxn];
+    bool vis[maxn];
+public:
+    //起点、终点和节点数目
     void init(int s,int t,int n)
     {
         this->s=s,this->t=t;
@@ -28,19 +34,25 @@ struct Dinic
     {
         edges.push_back(Edge(from,to,cap,0));
         edges.push_back(Edge(to,from,0,0));
+
         G[from].push_back(edges.size()-2);
         G[to].push_back(edges.size()-1);
     }
+protected:
     bool bfs()
     {
         memset(vis,0,sizeof(vis));
+
         queue<int> Q;
+        vis[s]=true;
         Q.push(s);
         d[s]=0;
-        vis[s]=true;
+
         while(!Q.empty())
         {
-            int now=Q.front();Q.pop();
+            int now=Q.front();
+            Q.pop();
+
             for(int i=0;i<G[now].size();i++)
             {
                 Edge& e=edges[G[now][i]];
@@ -57,16 +69,18 @@ struct Dinic
     int dfs(int x,int a)
     {
         if(x==t||a==0) return a;
+
         int flow=0,f;
         for(int& i=cur[x];i<G[x].size();i++)
         {
             Edge& e=edges[G[x][i]];
             if(d[x]+1==d[e.to]&&(f=dfs(e.to,min(a,e.cap-e.flow)))>0)
             {
+                a-=f;
+                flow+=f;
                 e.flow+=f;
                 edges[G[x][i]^1].flow-=f;
-                flow+=f;
-                a-=f;
+
                 if(!a) break;
             }
         }
@@ -85,5 +99,9 @@ struct Dinic
 };
 int main()
 {
+    Dinic *solver=new Dinic;
+
+    delete solver;
+
     return 0;
 }
