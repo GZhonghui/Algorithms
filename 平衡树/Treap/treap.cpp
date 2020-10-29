@@ -1,10 +1,12 @@
 #include<algorithm>
 #include<cstdio>
-#include<ctime>
 #include<vector>
+#include<ctime>
 using namespace std;
+
 const int maxn=1e5+10;
 int values[maxn];
+
 struct treap_node
 {
     treap_node *left,*right;
@@ -14,18 +16,23 @@ struct treap_node
         left=l,right=r,value=v,pro=p;cnt=siz=1;
     }
 };
+
 treap_node *Treap;
 int totle_nodes;
+
+//随机得到一个优先级
 unsigned long long get_pro()
 {
     return (unsigned long long)rand();
 }
+
 void re_cal(treap_node *now)
 {
     now->siz=now->cnt;
     if(now->left) now->siz+=now->left->siz;
     if(now->right) now->siz+=now->right->siz;
 }
+
 treap_node* insert(treap_node *now,int value)
 {
     if(!now)
@@ -53,6 +60,7 @@ treap_node* insert(treap_node *now,int value)
     }
     re_cal(now);return now;
 }
+
 treap_node* del(treap_node *now,int value)
 {
     if(!now) return nullptr;
@@ -92,6 +100,7 @@ treap_node* del(treap_node *now,int value)
     else now->right=del(now->right,value);
     re_cal(now);return now;
 }
+
 bool check(treap_node *now,int value)
 {
     if(!now) return false;
@@ -99,6 +108,7 @@ bool check(treap_node *now,int value)
     if(value<now->value) return check(now->left,value);
     return check(now->right,value);
 }
+
 void clear_tree(treap_node *now)
 {
     if(!now) return;
@@ -106,6 +116,7 @@ void clear_tree(treap_node *now)
     if(now->right) clear_tree(now->right);
     delete now;
 }
+
 int get_rank(treap_node *now,int value)
 {
     if(!now) return -1; int left_size=(now->left?now->left->siz:0);
@@ -113,19 +124,24 @@ int get_rank(treap_node *now,int value)
     if(value==now->value) return left_size+1;
     if(!now->right) return -1; return left_size+(now->cnt)+get_rank(now->right,value);
 }
+
 int get_ele(treap_node *now,int kth)
 {
     if(now->left)
         if(now->left->siz>=kth) return get_ele(now->left,kth);
         else kth-=now->left->siz;
     if(kth<=now->cnt) return now->value;
-    if(now->right&&kth-now->cnt<=now->right->siz) return get_ele(now->right,kth-now->cnt);return -1;
+    if(now->right&&kth-now->cnt<=now->right->siz)
+        return get_ele(now->right,kth-now->cnt);return -1;
 }
+
 void init_all()
 {
-    clear_tree(Treap);Treap=nullptr;
+    clear_tree(Treap);
+    Treap=nullptr;
     totle_nodes=0;
 }
+
 int main()
 {
     return 0;
