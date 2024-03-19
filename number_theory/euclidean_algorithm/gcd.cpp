@@ -8,7 +8,7 @@ int gcd(int x,int y)
     return y?gcd(y,x%y):x;
 }
 
-// 最小公倍数
+// 最小公倍数(lca是什么？)
 int lcm(int x,int y)
 {
     int g=gcd(x,y);
