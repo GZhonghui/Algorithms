@@ -6,3 +6,6 @@
 *euler_sieve.cpp*
 
 ### 杜教筛  
+
+### 习题
+- https://atcoder.jp/contests/typical90/tasks/typical90_ad
