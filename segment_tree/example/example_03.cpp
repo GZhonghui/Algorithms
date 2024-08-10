@@ -1,6 +1,8 @@
 // https://vjudge.net/problem/HDU-1698
 // https://acm.hdu.edu.cn/showproblem.php?pid=1698 Just a Hook
 
+// 比较全面的一个模板。修改支持：修改为定值；查询支持：Min、Max、Sum
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
@@ -11,7 +13,7 @@ struct SGTree
     int N,Record[maxn];
     int mmax[maxn*4],mmin[maxn*4],ssum[maxn*4];
     int lazy[maxn*4],Left,Right,Value;
-    void getRecord()
+    void getRecord() // 应该是获取初始值
     {
         scanf("%d",&N);
         for(int i=1;i<=N;i++) scanf("%d",&Record[i]);
@@ -94,12 +96,12 @@ int main()
     while(T--)
     {
         scanf("%d",&ac.N);
-        for(int i=1;i<=ac.N;i++) ac.Record[i]=1;
+        for(int i=1;i<=ac.N;i++) ac.Record[i]=1; // 手动设定初始值
         ac.build(1,1,ac.N);
         int Q;scanf("%d",&Q);
         while(Q--)
         {
-            scanf("%d %d %d",&ac.Left,&ac.Right,&ac.Value);
+            scanf("%d %d %d",&ac.Left,&ac.Right,&ac.Value); // ac.Value
             ac.Update(1,1,ac.N);
         }
         printf("Case %d: The total value of the hook is %d.\n",++Case,ac.ssum[1]);

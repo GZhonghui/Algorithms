@@ -9,7 +9,7 @@
 using namespace std;
 const int maxn=1e5+10;
 int input[maxn];
-int tree[maxn<<2];
+int tree[maxn<<2]; // 4倍的空间需求
 int Left,Right,pos;
 void build(int node,int l,int r)
 {
