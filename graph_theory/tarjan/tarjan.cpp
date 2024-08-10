@@ -1,13 +1,17 @@
+// https://atcoder.jp/contests/typical90/tasks/typical90_u
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
 #include<cstring>
 #include<stack>
 #include<vector>
+#include<unordered_map>
+#include<cstdint>
 using namespace std;
-const int maxn=10010;
-int N,M,Index,Low[maxn],Dfn[maxn],size[maxn];
-int Num,Belong[maxn],in[maxn],out[maxn];
+const int maxn=100000 + 1;
+int N,M,Index,Low[maxn],Dfn[maxn],Size[maxn];
+int Num,Belong[maxn],in[maxn],out[maxn]; // Belong: final answer
 bool inStack[maxn];
 stack<int> Stack;
 vector<int> G[maxn];
@@ -40,7 +44,7 @@ void Tarjan(int x)
             Stack.pop();
             inStack[to]=false;
             Belong[to]=Num;
-            size[Num]++;
+            Size[Num]++;
         }while(to!=x);
     }
 }
@@ -48,7 +52,7 @@ void init()
 {
     memset(Belong,0,sizeof(Belong));
     memset(inStack,0,sizeof(inStack));
-    memset(size,0,sizeof(size));
+    memset(Size,0,sizeof(Size));
     memset(Low,0,sizeof(Low));
     memset(Dfn,0,sizeof(Dfn));
     memset(in,0,sizeof(in));
@@ -56,14 +60,45 @@ void init()
     for(int i=1;i<=N;i++) G[i].clear();
     Index=Num=0;
 }
-void Demo()
+
+int main()
 {
-    for(int i=1;i<=N;i++)
+    int n,m,x,y;
+    scanf("%d %d",&n,&m);
+
+    N = n;
+    init();
+
+    for(int i=0;i<m;i+=1)
+    {
+        scanf("%d %d",&x,&y);
+        G[x].push_back(y);
+    }
+
+    for(int i=1;i<=N;i+=1)
     {
         if(!Dfn[i]) Tarjan(i);
     }
-}
-int main()
-{
+
+    std::unordered_map<int,int> counter;
+    for(int i=1;i<=N;i+=1)
+    {
+        int _belong = Belong[i];
+        if(!counter.count(_belong))
+        {
+            counter[_belong] = 0;
+        }
+        counter[_belong] += 1;
+    }
+
+    int64_t ans = 0;
+    for(auto i = counter.begin(); i != counter.end(); i++)
+    {
+        int64_t _size = i->second;
+        int64_t local = (_size * (_size - 1)) >> 1;
+        ans += local;
+    }
+    printf("%lld",ans);
+
     return 0;
 }
