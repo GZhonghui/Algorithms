@@ -2,7 +2,7 @@
 #include<cstdio>
 #include<algorithm>
 using namespace std;
-const int maxn=1024;
+const int maxn=1024; // 注意数据范围，是否需要int64
 struct Quick_C
 {
     int Jc[maxn],mod;
@@ -27,7 +27,7 @@ struct Quick_C
         exgcd(a,b,x,y);
         return (x+b)%b;
     }
-    int cal_C(int a,int b)
+    int cal_C(int a,int b) // a >= b
     {
         return Jc[a]*niYuan(Jc[b],mod)%mod*niYuan(Jc[a-b],mod)%mod;
     }
