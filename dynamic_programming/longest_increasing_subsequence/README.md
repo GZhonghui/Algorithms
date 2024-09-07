@@ -18,3 +18,6 @@ lis_02.cpp
 例题：
 - lis_02.cpp: https://atcoder.jp/contests/chokudai_S001/tasks/chokudai_S001_h
 - lis_03.cpp: https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_x
+
+## 封装版本
+**lis_04.cpp**可以直接使用

@@ -6,6 +6,7 @@
 - 插入排序
 - 冒泡排序
 - 归并排序
-- 基数排序（Radix sort）
+- 基数排序 (Radix sort)
+- 耐心排序 (Patience sorting)
 - 桶排序
 - 堆排序
