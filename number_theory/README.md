@@ -7,3 +7,4 @@
 - catalan_number 卡特兰数
 - combination 组合数
 - euler_quick_power (自己取的名字) 欧拉降幂
+- quick_power 快速幂
