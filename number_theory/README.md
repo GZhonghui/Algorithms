@@ -7,5 +7,6 @@
 - euler_quick_power (自己取的名字) 欧拉降幂
 - eulers_totient_function 欧拉函数
 - inverse_element 逆元
+- permutation 排列
 - quick_power 快速幂
 - sieve_theory 筛法
