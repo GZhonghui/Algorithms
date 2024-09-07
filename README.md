@@ -13,6 +13,7 @@
 - link_cut_tree
 - mind_traning
 - number_theory 数论
+- search 搜索
 - segment_tree 线段树
 - self_balancing_tree 平衡树
 - shortest_path 最短路
