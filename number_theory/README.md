@@ -1,6 +1,7 @@
 ## 数论
 
 - bit_operations 比特操作
+- breakdown_to_prime_factor 质因数分解
 - catalan_number 卡特兰数
 - combination 组合数
 - euclidean_algorithm 欧几里得算法 辗转相除法
