@@ -24,3 +24,4 @@
 
 ## Reference
 - **kuangbin的ACM模板** https://github.com/kuangbin/ACM-ICPC
+- **OI-Wiki** https://oi-wiki.org/
