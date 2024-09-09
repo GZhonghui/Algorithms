@@ -5,7 +5,7 @@ using namespace std;
 const int maxn=1024; // 注意数据范围，是否需要int64
 struct Quick_C
 {
-    int Jc[maxn],mod;
+    int Jc[maxn],mod; // Jc是阶乘的意思，可以预先计算
     void pre_cal()
     {
         Jc[0]=Jc[1]=1;
@@ -27,7 +27,7 @@ struct Quick_C
         exgcd(a,b,x,y);
         return (x+b)%b;
     }
-    int cal_C(int a,int b) // a >= b
+    int cal_C(int a,int b) // a >= b C_{a}^{b}
     {
         return Jc[a]*niYuan(Jc[b],mod)%mod*niYuan(Jc[a-b],mod)%mod;
     }

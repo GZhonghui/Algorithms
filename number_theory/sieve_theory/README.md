@@ -1,7 +1,7 @@
 ## 筛法
 
 ### 埃拉托斯特尼筛法 Eratosthenes
-比线性筛满
+比线性筛慢
 
 ### 欧拉筛（线性筛法）
 *euler_sieve.cpp*  

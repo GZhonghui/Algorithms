@@ -9,7 +9,7 @@ const int maxn = 1024;
 
 struct Sieve
 {
-    bool check[maxn];
+    bool check[maxn]; // 被check标记的（check[i] == true）都是非质数（not_prime）
     vector<int> prime; // 找到的质数
 
     void init()
