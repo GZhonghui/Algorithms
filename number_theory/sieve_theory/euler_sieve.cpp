@@ -1,20 +1,23 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<vector>
-#include<cstring>
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <vector>
+
 using namespace std;
-const int maxn=1024;
+const int maxn = 1024;
+
 struct Sieve
 {
     bool check[maxn];
-    vector<int> prime;
+    vector<int> prime; // 找到的质数
+
     void init()
     {
         memset(check,0,sizeof(check));
         prime.clear();
     }
-    void calc(int n)
+    void calc(int n) // 找到[,n]以内的质数
     {
         for(int i=2;i<=n;i++)
         {
