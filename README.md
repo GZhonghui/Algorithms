@@ -21,3 +21,6 @@
 - spanning_tree 生成树
 - string 字符串
 - treap
+
+## Reference
+- **kuangbin的ACM模板** https://github.com/kuangbin/ACM-ICPC
