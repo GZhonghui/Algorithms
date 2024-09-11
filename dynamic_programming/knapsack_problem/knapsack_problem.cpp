@@ -8,6 +8,7 @@
 namespace g
 {
     typedef int64_t ll;
+    const ll inf = INT64_MAX;
 
     // 此代码尚未经过检验
     // [1,n]
@@ -63,6 +64,29 @@ namespace g
         }
 
         return ans = dp[weight_limit];
+    }
+
+    // 此代码尚未经过检验
+    // ans[0, value_limit] 选择的物品价值总和为i的时候，最小的质量和为ans[i]
+    // 物品范围[1,n]
+    void min_weight(ll n, ll value_limit, ll* weights, ll* values, ll* ans)
+    {
+        for(ll i=1; i<=value_limit; i+=1)
+        {
+            ans[i] = inf;
+        }
+        ans[0] = 0;
+
+        for(ll i=1; i<=n; i+=1)
+        {
+            for(ll j=value_limit; j>=1; j-=1)
+            {
+                if(j >= values[i] && ans[j - values[i]] < inf && ans[j - values[i]] + weights[i] < ans[j])
+                {
+                    ans[j] = ans[j - values[i]] + weights[i];
+                }
+            }
+        }
     }
 }
 
