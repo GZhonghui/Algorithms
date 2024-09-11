@@ -88,6 +88,25 @@ namespace g
             }
         }
     }
+
+    // 此份代码尚未经过验证
+    // [1,n]
+    ll max_value_2d(ll n, ll weight_limit_1, ll* weights_1, ll weight_limit_2, ll* weights_2, ll* values)
+    {
+        ll dp[weight_limit_1 + 4][weight_limit_2 + 4];
+        for(ll i=1; i<=n; i+=1)
+        {
+            for(ll j=weight_limit_1; j>=weights_1[i]; j-=1)
+            {
+                for(ll k=weight_limit_2; k>=weights_2[i]; k-=1)
+                {
+                    dp[j][k] = std::max(dp[j][k], dp[j-weights_1[i]][k-weights_2[i]] + values[i]);
+                }
+            }
+        }
+
+        return dp[weight_limit_1][weight_limit_2];
+    }
 }
 
 int main()
