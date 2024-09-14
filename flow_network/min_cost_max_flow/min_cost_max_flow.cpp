@@ -25,12 +25,14 @@ public:
     bool vis[maxn],inq[maxn];
     int s,t,dis[maxn],a[maxn],p[maxn];
 public:
+    // 节点范围：[1,n]
     void init(int s,int t,int n)
     {
         this->s=s,this->t=t;
         for(int i=1;i<=n;i++) G[i].clear();
         edges.clear();
     }
+    // Cost是流量的单位花费，每条边是不同的
     void AddEdge(int Start,int End,int Cap,int Cost)
     {
         edges.push_back(Edge(Start,End,Cap,0,Cost));
@@ -96,5 +98,8 @@ protected:
 };
 int main()
 {
+    // init
+    // add_edge
+    // calc_min_cost
     return 0;
 }

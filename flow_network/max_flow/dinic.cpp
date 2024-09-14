@@ -24,12 +24,14 @@ public:
     bool vis[maxn];
 public:
     //起点、终点和节点数目
+    // 节点ID：[1,n]
     void init(int s,int t,int n)
     {
         this->s=s,this->t=t;
         for(int i=1;i<=n;i++) G[i].clear();
         edges.clear();
     }
+    // 每条边都有容量
     void AddEdge(int from,int to,int cap)
     {
         edges.push_back(Edge(from,to,cap,0));
@@ -100,6 +102,10 @@ protected:
 int main()
 {
     Dinic *solver=new Dinic;
+
+    // init
+    // add_edge
+    // calc_max_flow
 
     delete solver;
 
