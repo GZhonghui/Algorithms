@@ -3,10 +3,11 @@
 
 // 自己写的版本
 // todo 求lis的下标序列
-int lis(int numbers_count, int* numbers, int* lis_index, bool allow_equal = true)
+// numbers[0,numbers_count)
+int lis(int numbers_count, int* numbers, int* dp, bool allow_equal = true)
 {
     int buffer[numbers_count + 1];
-    buffer[0] = 1, buffer[1] = numbers[0];
+    buffer[0] = 1, buffer[1] = numbers[0], dp[0] = 1;
 
     for(int i = 1; i < numbers_count; i += 1)
     {
@@ -21,6 +22,7 @@ int lis(int numbers_count, int* numbers, int* lis_index, bool allow_equal = true
         {
             buffer[index+1] = numbers[i];
         }
+        dp[i] = index + 1;
     }
 
     return buffer[0];
