@@ -8,9 +8,9 @@
 ## 用途1：解决和点对有关的问题
 > 找到这个序列的中点 $mid$  
 > 将所有点对 $(i,j)$ 划分为 3 类  
-> 1) $1 \leq i \leq mid,1 \leq j \leq mid$ 的点对；  
-> 2) $1  \leq i \leq mid ,mid+1 \leq j \leq n$ 的点对；  
-> 3) $mid+1 \leq  i \leq n,mid+1 \leq j \leq n$ 的点对。  
+> <1> $1 \leq i \leq mid,1 \leq j \leq mid$ 的点对；  
+> <2> $1  \leq i \leq mid ,mid+1 \leq j \leq n$ 的点对；  
+> <3> $mid+1 \leq  i \leq n,mid+1 \leq j \leq n$ 的点对。  
 > 将 $(1,n)$ 这个序列拆成两个序列 $(1,mid)$ 和 $(mid+1,n)$。此时第一类点对和第三类点对都在这两个序列之中  
 > 递归地处理这两类点对  
 > 设法处理第二类点对
