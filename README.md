@@ -1,5 +1,6 @@
 # Algorithm Notes
 
+- basic
 - binary_indexed_tree 树状数组
 - cdq_divide_and_conquer CDQ分治
 - computational_geometry 计算几何
