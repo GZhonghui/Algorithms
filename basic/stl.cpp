@@ -4,6 +4,8 @@
 
 #include <algorithm>
 #include <iterator> // For std::advance
+#include <functional> // 包含 std::hash
+#include <string>
 #include <vector>
 #include <stack>
 #include <queue>
@@ -15,6 +17,28 @@
 #include <unordered_map>
 
 using namespace std;
+
+// AI生成
+struct sortable {
+    int value;
+
+    // 重载<运算符，定义优先级规则。这里我们定义越小的值优先级越高。
+    bool operator<(const sortable& other) const {
+        // 注意这里我们返回“大于”逻辑来实现“最小值优先”的逻辑。
+        return value > other.value;
+    }
+};
+
+// AI生成
+// unordered set / map内部是使用哈希表实现的，所以需要重载==函数
+struct hashable {
+    int x;
+    double y;
+
+    bool operator==(const hashable& other) const {
+        return x == other.x && y == other.y;
+    }
+};
 
 // 本函数由AI生成
 template<typename T>
@@ -384,4 +408,27 @@ void map_demo()
     mm.clear();  // 映射 mm > []
     um.clear();  // 映射 um > []
     umm.clear(); // 映射 umm > []
+}
+
+// AI生成
+// 为自定义类型 hashable 特化 std::hash
+// 显式“实例化”一个模板struct（感觉用词不太恰当）
+template<>
+struct std::hash<hashable> {
+    size_t operator()(const hashable& s) const noexcept {
+        // 组合 x 和 y 的哈希值，使用异或和位移来混合哈希
+        return std::hash<int>()(s.x) ^ (std::hash<double>()(s.y) << 1);
+    }
+};
+
+// AI生成
+// 演示 std::hash 的用法
+void hash_demo() {
+    // 基本类型的哈希
+    std::hash<int> hash_int; // 这些都可以当作函数来用
+    std::hash<double> hash_double;
+    std::hash<std::string> hash_string;
+
+    // 自定义类型的哈希
+    std::hash<hashable> hash_custom;
 }
