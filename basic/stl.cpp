@@ -356,6 +356,7 @@ void set_demo()
     ums.clear(); // 集合 ums > []
 }
 
+// 注意！map的key可以使用pair，但是unordered_map的key不能使用pair
 // 本函数由AI生成
 template<typename T1, typename T2>
 void map_demo()
