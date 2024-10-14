@@ -44,7 +44,8 @@ struct hashable {
 template<typename T>
 void vector_demo()
 {
-    std::vector<T> v;
+    // 初始化为256个0
+    std::vector<T> v(256, (T)0);
 
     // 清空vector
     v.clear(); // []
