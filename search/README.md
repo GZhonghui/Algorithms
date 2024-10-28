@@ -16,5 +16,8 @@ tips：如果不确定最后答案的收束条件，可以在二分范围到达�
 **find_range.cpp**  
 二分查找范围（具体用法看代码内注释）
 
+**find_by_limit.cpp**  
+使用二分查找来查找数组中小于等于 K 的元素数量
+
 ### 推荐习题
 - **Chokudai's Demand** https://atcoder.jp/contests/typical90/tasks/typical90_ci
