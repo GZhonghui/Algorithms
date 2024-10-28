@@ -55,6 +55,13 @@ void vector_demo()
     v.push_back((T)2); // [1, 2]
     v.push_back((T)3); // [1, 2, 3]
 
+    /*
+        vector.emplace_back 是 C++ STL（标准模板库）中 std::vector 类的
+        一个成员函数，用于在向量的末尾直接构造一个元素。它与 push_back 类似，
+        但 emplace_back 通过原地构造对象，避免了不必要的临时对象创建和复制操作，
+        因此在某些情况下可以提高性能。
+    */
+
     // 使用 assign 重新赋值
     v.assign(5, (T)4); // [4, 4, 4, 4, 4]
 
