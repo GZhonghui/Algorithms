@@ -2,6 +2,8 @@
 #include<cstdio>
 using namespace std;
 
+namespace disjoint_set {
+
 const int maxn=1024;
 
 int fa[maxn];
@@ -29,9 +31,11 @@ inline void init()
     for(int i=0;i<maxn;i++) fa[i]=i;
 }
 
+} // namespace disjoint_set
+
 int main()
 {
-    init();
+    disjoint_set::init();
 
     return 0;
 }
