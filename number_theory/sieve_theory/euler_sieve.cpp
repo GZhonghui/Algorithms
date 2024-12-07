@@ -1,28 +1,32 @@
 #include <algorithm>
 #include <iostream>
 #include <cstring>
+#include <cstdint>
 #include <cstdio>
 #include <vector>
 
+namespace number_theory {
+
 using namespace std;
-const int maxn = 1024;
+typedef int64_t ll;
+const ll maxn = 1e6 + 10; // 要筛的范围
 
 struct Sieve
 {
     bool check[maxn]; // 被check标记的（check[i] == true）都是非质数（not_prime）
-    vector<int> prime; // 找到的质数
+    vector<ll> prime; // 找到的质数
 
     void init()
     {
         memset(check,0,sizeof(check));
         prime.clear();
     }
-    void calc(int n) // 找到[,n]以内的质数
+    void calc(ll n) // 找到[,n]以内的质数
     {
-        for(int i=2;i<=n;i++)
+        for(ll i=2;i<=n;i++)
         {
             if(!check[i]) prime.push_back(i);
-            for(int j=0;j<prime.size();j++)
+            for(ll j=0;j<prime.size();j++)
             {
                 if(i*prime[j]>n) break;
                 check[i*prime[j]]=true;
@@ -31,7 +35,5 @@ struct Sieve
         }
     }
 };
-int main()
-{
-    return 0;
-}
+
+} // NAMESPACE number_theory
