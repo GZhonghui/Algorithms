@@ -7,3 +7,6 @@
 
 *binary_indexed_tree_2d.cpp*（v2是封装的版本）  
 二维树状数组，支持区间加减和区间查询
+
+## 应用
+- 求逆序对，时间复杂度是$O(N\log{N})$；并且目标区间可以动态维护。例题：[Another Shuffle Window](https://atcoder.jp/contests/abc380/tasks/abc380_g)
