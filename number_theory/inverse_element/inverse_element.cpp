@@ -12,6 +12,7 @@ void exgcd(ll a,ll b,ll& d,ll& x,ll& y){
 }
 
 // 扩展欧几里得法，计算a的逆元，p是模数，a和p需要是互质的
+// 如果p本身就是质数，那么a就没有限制了，任意非零数a都与素数p互质
 ll inverse_element_exgcd(ll a, ll p){
     ll d,x,y;
     exgcd(a,p,d,x,y);
