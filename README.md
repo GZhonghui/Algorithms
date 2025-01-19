@@ -26,3 +26,5 @@
 ## Reference
 - **kuangbin的ACM模板** https://github.com/kuangbin/ACM-ICPC
 - **OI-Wiki** https://oi-wiki.org/
+- **AtCoder Library Document** https://atcoder.github.io/ac-library/production/document_en/index.html
+- **AtCoder Library** https://github.com/atcoder/ac-library
