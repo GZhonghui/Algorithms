@@ -1,10 +1,9 @@
 # Algorithm Notes
 
-- basic
-- binary_indexed_tree 树状数组
-- cdq_divide_and_conquer CDQ分治
+- **Basic**
+- **Binary Indexed Tree**
 - computational_geometry 计算几何
-- disjoint_set 并查集
+- **Disjoint Set**
 - dynamic_programming 动态规划
 - flow_network 网络流
 - fourier_transform 傅立叶变换

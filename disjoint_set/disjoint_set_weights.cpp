@@ -1,5 +1,10 @@
-// http://poj.org/problem?id=1182 食物链
-// 带权并查集
+/*
+
+带权并查集
+本代码是经典例题「POJ 1182 食物链」（http://poj.org/problem?id=1182）的代码
+代码尚未整理 仅供参考
+
+*/
 
 #include<iostream>
 #include<cstdio>
