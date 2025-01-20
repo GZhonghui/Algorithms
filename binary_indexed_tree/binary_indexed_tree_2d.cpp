@@ -1,6 +1,14 @@
-#include<algorithm>
-#include<cstring>
-#include<cstdio>
+/*
+
+注意：代码年代久远，正确性未实际验证过
+
+二维树状数组，支持区间加减和区间查询
+
+*/
+
+#include <algorithm>
+#include <cstring>
+#include <cstdio>
 
 using namespace std;
 
@@ -13,6 +21,8 @@ public:
     int C1[maxn][maxn],C2[maxn][maxn];
     int C3[maxn][maxn],C4[maxn][maxn];
 public:
+    // 下标范围是[1,n] & [1,m]，下述的操作也都是闭区间
+    // x 属于 [1,n]，y 属于 [1,m]
     void init(int n,int m)
     {
         this->row=n;this->colum=m;
@@ -56,8 +66,3 @@ protected:
         return ret;
     }
 };
-
-int main()
-{
-    return 0;
-}
