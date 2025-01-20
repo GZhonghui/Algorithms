@@ -1,7 +1,21 @@
-#include<iostream>
-#include<cstdio>
-#include<algorithm>
+/*
+
+二维线段树，支持区间修改，区间查询
+可以支持的修改：加减，修改为目标值（等）
+可以支持的查询：最大值，最小值，和（等）
+Lazy标记
+
+代码年久失修 整理时未经测试 仅供参考
+
+*/
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
 using namespace std;
+
+namespace segment_tree_2d {
+
 const int maxn=(1<<20)+100;
 struct Line{
     int start,end; Line(int x,int y){this->start=x,this->end=y;}
@@ -52,7 +66,5 @@ int ask(int node,Line row,Line colum)
     if(avaliable[get_son(node)+2]) ans+=ask(get_son(node)+2,row.right_half(),colum.left_half());
     if(avaliable[get_son(node)+3]) ans+=ask(get_son(node)+3,row.right_half(),colum.right_half());return ans;
 }
-int main()
-{
-    return 0;
-}
+
+} // namespace segment_tree_2d

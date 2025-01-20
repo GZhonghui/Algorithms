@@ -1,3 +1,10 @@
+/*
+
+AtCoder 的 lazysegtree 模板使用指南
+AtCoder 的 lazysegtree 写得最优雅，已经加入到 PlayGround 的标准模板中，是最推荐用的一个版本
+
+*/
+
 // 使用 Cursor Composer 生成
 // 使用 C++ 17 以上
 
@@ -38,11 +45,13 @@ S_both op_both(S_both a, S_both b) {
 }
 
 // 定义默认值
+// 不是代表一个基本单位（len = 1），而是一个空区间（len = 0）
 S_both e_both() {
     return S_both{0, (long long)-1e18, 0};
 }
 
 // 修改映射操作
+// 将懒标记应用到线段树的节点上
 S_both mapping_both(F_both f, S_both s) {
     if (f.is_set) {
         // 如果是设置操作
@@ -63,17 +72,14 @@ S_both mapping_both(F_both f, S_both s) {
 
 // 修改懒标记合并操作
 // 用于将两个懒标记合并为一个懒标记
-// 如果f是设置操作，直接覆盖之前的操作
-// 如果g是设置操作，在设置后再加上f.add
-// 如果两个都是加法操作，直接相加
-F_both composition_both(F_both f, F_both g) {
-    if (f.is_set) {
-        return f;
-    } else if (g.is_set) {
-        return F_both{f.add, g.set + f.add, true};
+F_both composition_both(F_both new_op, F_both old_op) {
+    if (new_op.is_set) {
+        return new_op;
+    } else if (old_op.is_set) {
+        return F_both{old_op.add, old_op.set + new_op.add, true};
     } else {
         // 两个都是加法操作，直接相加
-        return F_both{f.add + g.add, 0, false};
+        return F_both{old_op.add + new_op.add, 0, false};
     }
 }
 
@@ -84,7 +90,7 @@ F_both id_both() {
     return F_both{0, 0, false};
 }
 
-int main() {
+int atcoder_lazysegtree_test() {
     cout << "=== Range Sum and Maximum Demo ===" << endl;
     
     // 初始化一个长度为8的数组
@@ -117,6 +123,8 @@ int main() {
     cout << "Sum: " << result.sum << endl;
     cout << "Max: " << result.max << endl;
     
+    // 注意：以下两个二分查找函数，要再详细确认一下是否正确
+
     // 演示max_right功能
     cout << "\n=== max_right Demo ===" << endl;
     int left = 2; // 从位置2开始

@@ -1,3 +1,12 @@
+/*
+
+主席树，函数式线段树，可持久化线段树  
+功能：可以ask_kth和ask_range_kth
+
+代码年久失修 整理时未经测试 仅供参考
+
+*/
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
