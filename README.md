@@ -3,6 +3,7 @@
 - **Basic**
 - **Binary Indexed Tree**
 - **Disjoint Set**
+- **Flow Network**
 - **Segment Tree**
 
 ## Reference

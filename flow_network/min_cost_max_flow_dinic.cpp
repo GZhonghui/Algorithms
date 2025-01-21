@@ -1,3 +1,12 @@
+/*
+
+min cost max flow 最小费用最大网络流
+基于Dinic的最小费用流算法，每条边除了容量以外还有单独的费用，算法目标是找到总花费最小的最大流方案  
+最终的方案，首先是保证最大流，其实才是保证最小费用  
+每条边的费用，是单位费用，有x的流量，就有kx的费用
+
+*/
+
 #include<algorithm>
 #include<cstring>
 #include<vector>
@@ -96,10 +105,15 @@ protected:
         return cost;
     }
 };
-int main()
+int min_cost_max_flow_example()
 {
+    Dinic *solver=new Dinic;
+
     // init
     // add_edge
     // calc_min_cost
+
+    delete solver;
+
     return 0;
 }

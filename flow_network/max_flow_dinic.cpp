@@ -1,3 +1,10 @@
+/*
+
+max flow 最大流算法
+最大流的Dinic算法，实现简单但是时间复杂度不是最优秀的
+
+*/
+
 #include<algorithm>
 #include<cstring>
 #include<vector>
@@ -99,7 +106,7 @@ protected:
         return ans;
     }
 };
-int main()
+int dinic_example()
 {
     Dinic *solver=new Dinic;
 
