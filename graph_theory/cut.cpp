@@ -139,7 +139,7 @@ public:
                 idx = 0;
                 tarjan_e(i, i, cut_edges);
             }
-        }        
+        }
     }
 };
 
