@@ -1,13 +1,20 @@
-// https://atcoder.jp/contests/typical90/tasks/typical90_m 单源最短路径模板题
+/*
 
-#include<algorithm>
-#include<iostream>
-#include<cstdio>
-#include<vector>
-#include<queue>
+迪杰斯特拉 Dijkstra 不支持负边权
 
-#include<cstdint>
-#include<cstring>
+例题：
+https://acm.hdu.edu.cn/showproblem.php?pid=2544 最短路
+https://atcoder.jp/contests/typical90/tasks/typical90_m 单源最短路径模板题
+
+*/
+
+#include <algorithm>
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <queue>
+#include <cstdint>
+#include <cstring>
 
 using namespace std;
 typedef int64_t ll;
@@ -102,7 +109,7 @@ protected:
 
 } // namespace Dijkstra
 
-int main()
+int dijkstra_example()
 {
     int n,m;
     scanf("%d %d",&n,&m);

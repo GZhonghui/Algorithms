@@ -1,4 +1,11 @@
-// 由AI生成
+/*
+
+弗洛伊德算法 Floyd-Warshall floyd
+求图中任意两点之间的最短路
+这种算法特别适用于无向图和有向图，可以处理正权重和负权重（但不能处理负权重环）
+由AI生成
+
+*/
 
 #include <iostream>
 #include <climits>
@@ -20,7 +27,7 @@ void floydWarshall(int n) {
     }
 }
 
-int main() {
+int floydWarshall_test() {
     int n, m;
     cout << "Enter number of vertices (<= " << MAXN << "): ";
     cin >> n;

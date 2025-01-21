@@ -1,3 +1,11 @@
+/*
+
+SPFA 单点最短路算法
+支持负边权
+代码年久失修
+
+*/
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
@@ -88,7 +96,3 @@ struct SPFA
         return false;
     }
 };
-int main()
-{
-    return 0;
-}
