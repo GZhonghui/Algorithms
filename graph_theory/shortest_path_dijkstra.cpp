@@ -2,6 +2,16 @@
 
 迪杰斯特拉 Dijkstra 不支持负边权
 
+关于时间复杂度：
+普通实现：O(V^2)
+优先队列优化：O((V+E)logV)
+
+所以在稠密图上，普通实现反而更快
+举例来说：在完全图上优先队列的版本时间复杂度是O(V^2logV)，而普通版本是O(V^2)
+这一点要注意
+
+以下是使用优先队列的版本
+
 例题：
 https://acm.hdu.edu.cn/showproblem.php?pid=2544 最短路
 https://atcoder.jp/contests/typical90/tasks/typical90_m 单源最短路径模板题
