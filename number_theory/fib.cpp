@@ -32,12 +32,12 @@ namespace fib {
     pair<ll, ll> quick_fib(ll n, ll mod) { // return {fib_n, fib_(n+1)}
         if (n == 0) return make_pair<ll, ll>(0, 1);
         pair<ll, ll> p = quick_fib(n >> 1, mod);
-        int c = p.first * (2 * p.second - p.first) % mod;
-        int d = (p.first * p.first + p.second * p.second) % mod;
+        ll c = p.first * (2 * p.second - p.first + mod) % mod;
+        ll d = (p.first * p.first + p.second * p.second) % mod;
         if (n & 1)
-            return make_pair<ll, ll>(d, (c + d) % mod);
+            return make_pair(d, (c + d) % mod);
         else
-            return make_pair<ll, ll>(c, d);
+            return make_pair(c, d);
     }
 
     // fib数列可以用于编码
