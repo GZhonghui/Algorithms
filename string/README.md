@@ -1,13 +1,12 @@
 # 字符串算法
 
-## aho_corasick
-AC自动机
-
 ## manacher
 马拉车
 
 ## suffix_automaton
 后缀自动机
+
+后缀数组 & LCP数组
 
 ## palindromic_tree
 回文自动机（简称PAM，又称回文树）
