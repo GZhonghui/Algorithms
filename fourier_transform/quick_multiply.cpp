@@ -1,7 +1,18 @@
-#include<algorithm>
-#include<cstring>
-#include<cstdio>
-#include<cmath>
+/*
+
+傅里叶变换 实现大数乘法
+代码年久失修 仅供参考 推荐使用 ACL 的版本（卷积）
+根据卷积定理，时域卷积等于频域乘积，可以用于快速计算大整数相乘
+
+*/
+
+#include <algorithm>
+#include <cstring>
+#include <cstdio>
+#include <cmath>
+
+namespace FFT {
+
 using namespace std;
 const int maxn=1e5+10;
 const double pi=acos(-1.0);
@@ -96,12 +107,12 @@ void solve(const char *A,const char *B)
     while(ans[endPoint]<=0&&endPoint>=1) endPoint-=1;
     for(int i=endPoint;i>=0;i-=1) putchar(ans[i]+'0');puts("");
 }
+
+} // namespace FFT
+
 int main()
 {
-    char x[maxn],y[maxn];
-    scanf("%s %s",x,y);
-    
-    solve(x,y);
+    FFT::solve("127312387", "823013017023"); // 104779751729269763901
 
     return 0;
 }

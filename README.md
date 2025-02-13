@@ -4,6 +4,7 @@
 - **Binary Indexed Tree**
 - **Disjoint Set**
 - **Flow Network**
+- **Fourier Transform**
 - **Segment Tree**
 
 ## Reference
