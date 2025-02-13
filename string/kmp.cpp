@@ -3,6 +3,8 @@
 KMP算法
 给定一个文本 t 和一个字符串 s，我们尝试找到并展示 s 在 t 中的所有出现（occurrence）
 
+暂未验证正确性
+
 */
 
 #include <algorithm>
