@@ -17,7 +17,7 @@ namespace kmp {
     using namespace std;
 
     // 计算前缀函数
-    // 前缀函数 pi[i] 表示 s[0..i] 的最长公共真前后缀的长度
+    // 前缀函数 pi[i] 表示 s[0..i] 的最长的相等的真前缀与真后缀的长度
     void prefix_function(const string &s, vector<int> &pi) { // 0-indexed
         int n = (int)s.length();
         pi.resize(n, 0);
