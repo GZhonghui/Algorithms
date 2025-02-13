@@ -3,8 +3,6 @@
 ## aho_corasick
 AC自动机
 
-## kmp
-
 ## manacher
 马拉车
 
