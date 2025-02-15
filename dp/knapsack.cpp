@@ -1,3 +1,34 @@
+/*
+
+背包问题一般是刚开始学习DP的时候接触到的第一个问题
+所以一些关于DP 通用的思考方式和技巧 也记录在这里
+
+1. 如何处理环？  
+延长1倍，变成2n的长度
+
+2. 记忆化搜索  
+在求解动态规划的问题时，记忆化搜索和递推，都确保了同一状态至多只被求解一次
+而它们实现这一点的方式则略有不同：
+递推通过设置明确的访问顺序来避免重复访问
+记忆化搜索虽然没有明确规定访问顺序，但通过给已经访问过的状态打标记的方式，也达到了同样的目的
+我个人非常喜欢用记忆化搜索 写起来非常得清晰
+
+==========
+
+背包问题 knapsack problem
+
+01背包
+完全背包
+多重背包
+混合背包
+
+2维费用
+分组背包
+依赖关系
+泛化物品
+
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <cstdint>
@@ -5,15 +36,15 @@
 #include <cstring>
 #include <vector>
 
-namespace g
-{
+namespace knapsack_problem {
     typedef int64_t ll;
     const ll inf = INT64_MAX;
 
     // 此代码尚未经过检验
-    // [1,n]
-    // count == -1 表示有无穷个
+    // [1,n], 1-indexed
     // 01背包 + 完全背包 + 多重背包 = 混合背包
+    // n 个物品，重量上限为 weight_limit，求解可能的最大价值
+    // 第 i 个物品的重量为 weights[i]，价值为 values[i]，数量为 counts[i]（count == -1 表示有无穷个）
     ll max_value(ll n, ll weight_limit, ll* weights, ll* values, ll* counts)
     {
         ll ans = 0, dp[weight_limit + 8];
@@ -67,8 +98,8 @@ namespace g
     }
 
     // 此代码尚未经过检验
-    // ans[0, value_limit] 选择的物品价值总和为i的时候，最小的质量和为ans[i]
-    // 物品范围[1,n]
+    // 有 n 个物品，范围[1,n]，第 i 个物品的重量为 weights[i]，价值为 values[i]
+    // ans[0, value_limit]为结果 ans[i]表示选择的物品价值总和为i的时候，最小的质量和为ans[i]
     void min_weight(ll n, ll value_limit, ll* weights, ll* values, ll* ans)
     {
         for(ll i=1; i<=value_limit; i+=1)
@@ -90,7 +121,8 @@ namespace g
     }
 
     // 此份代码尚未经过验证
-    // [1,n]
+    // 物品范围[1,n]，第 i 个物品的重量为 weights_1[i] 和 weights_2[i]，价值为 values[i]
+    // 两个重量都要在各自的限制内 求解可能的最大价值
     ll max_value_2d(ll n, ll weight_limit_1, ll* weights_1, ll weight_limit_2, ll* weights_2, ll* values)
     {
         ll dp[weight_limit_1 + 4][weight_limit_2 + 4];
@@ -107,10 +139,4 @@ namespace g
 
         return dp[weight_limit_1][weight_limit_2];
     }
-}
-
-int main()
-{
-
-    return 0;
-}
+} // namespace knapsack_problem
