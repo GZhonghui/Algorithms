@@ -1,6 +1,10 @@
-// C++ STL 演示各种用法
-// C++ 14
-// g++ stl.cpp -c --std=c++14
+/*
+
+C++ STL 演示各种用法
+C++ 14
+g++ stl.cpp -c --std=c++14
+
+*/
 
 #include <algorithm>
 #include <iterator> // For std::advance

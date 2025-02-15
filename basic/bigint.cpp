@@ -1,4 +1,9 @@
-// copied from: https://github.com/stewartm83/bigint
+/*
+
+高精度 应该不会用到 在Github上抄了一份以备不时之需
+copied from: https://github.com/stewartm83/bigint
+
+*/
 
 #include <vector>
 #include <string>
