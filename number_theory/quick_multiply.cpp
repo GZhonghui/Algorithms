@@ -1,6 +1,6 @@
 /*
 
-傅里叶变换 实现大数乘法
+傅里叶变换(fourier_transform) 实现大数乘法
 代码年久失修 仅供参考 推荐使用 ACL 的版本（卷积）
 根据卷积定理，时域卷积等于频域乘积，可以用于快速计算大整数相乘
 
@@ -11,7 +11,7 @@
 #include <cstdio>
 #include <cmath>
 
-namespace FFT {
+namespace FFT_quick_multiply {
 
 using namespace std;
 const int maxn=1e5+10;
@@ -108,11 +108,8 @@ void solve(const char *A,const char *B)
     for(int i=endPoint;i>=0;i-=1) putchar(ans[i]+'0');puts("");
 }
 
-} // namespace FFT
-
-int main()
-{
-    FFT::solve("127312387", "823013017023"); // 104779751729269763901
-
-    return 0;
+void toolkit() {
+    FFT_quick_multiply::solve("127312387", "823013017023"); // 104779751729269763901
 }
+
+} // namespace FFT_quick_multiply
