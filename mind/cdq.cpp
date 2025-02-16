@@ -1,4 +1,6 @@
-# CDQ分治
+/*
+
+CDQ分治 cdq_divide_and_conquer
 
 分治算法：Divide-and-conquer algorithm (分割統治法)
 
@@ -20,3 +22,10 @@
 
 ## 用途2：1D 动态规划的优化与转移
 ## 用途3：通过 CDQ 分治，将一些动态问题转化为静态问题
+
+*/
+
+// TODO
+namespace cdq {
+
+} // namespace cdq
