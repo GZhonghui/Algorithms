@@ -1,53 +1,27 @@
-//有点丑orz
-#include<algorithm>
-#include<cstdio>
-#include<cmath>
-#include<unordered_set>
-#include<vector>
-#include<stack>
-#include<ctime>
+/*
+
+convex_hull 凸包
+有点丑orz
+
+*/
+
+#include "computational_geometry.h"
+#include <unordered_set>
+#include <stack>
 #define RANDOM
+
+namespace convex_hull {
 using namespace std;
-const double eps=1e-6;
-struct Vector2
+using namespace computational_geometry;
+
+int relatively(const Point2f &origin,const Direction2f &forward,const Point2f &point)
 {
-    double x,y;
-    Vector2()=default;
-    Vector2(double k):x(k),y(k){}
-    Vector2(double x,double y):x(x),y(y){}
-    Vector2 operator+(const Vector2 &rhx) const
-    {
-        return Vector2(x+rhx.x,y+rhx.y);
-    }
-    Vector2 operator-(const Vector2 &rhx) const
-    {
-        return Vector2(x-rhx.x,y-rhx.y);
-    }
-    double distance(const Vector2 &rhx) const
-    {
-        double dx=x-rhx.x,dy=y-rhx.y;
-        return std::sqrt(dx*dx+dy*dy);
-    }
-    double normal() const
-    {
-        return std::sqrt(x*x+y*y);
-    }
-    Vector2 normalized() const
-    {
-        double len=normal();
-        return Vector2(x/len,y/len);
-    }
-};
-typedef Vector2 Point;
-typedef Vector2 Direction;
-int relatively(const Point &origin,const Direction &forward,const Point &point)
-{
-    Direction rhx_v=point-origin;
+    Direction2f rhx_v=point-origin;
     double result=rhx_v.x*forward.y-forward.x*rhx_v.y;
     if(std::abs(result)<eps) return 0;
     return result<0?-1:1;
 }
-bool andrew_sort(const Point &A,const Point &B)
+bool andrew_sort(const Point2f &A,const Point2f &B)
 {
     if(A.x==B.x)
     {
@@ -56,8 +30,9 @@ bool andrew_sort(const Point &A,const Point &B)
     return A.x<B.x;
 }
 unordered_set<int> used;
-vector<Point> points;
-stack<Point> order;
+vector<Point2f> points;
+stack<Point2f> order;
+
 int solve()
 {
     srand((unsigned)time(nullptr));
@@ -77,18 +52,18 @@ int solve()
 #else
         scanf("%lf %lf",&x,&y);
 #endif
-        points.push_back(Point(x,y));
+        points.push_back(Point2f(x,y));
     }
     sort(points.begin(),points.end(),andrew_sort);
     order.push(points[0]);
     for(int i=2,_size=points.size();i<=_size;i=i+1)
     {
-        const Point &now=points[i-1];
+        const Point2f &now=points[i-1];
         while((int)order.size()>=2)
         {
-            Point point=order.top();
+            Point2f point=order.top();
             order.pop();
-            Point origin=order.top();
+            Point2f origin=order.top();
             if(relatively(origin,now-origin,point)<=0)
             {
                 used.erase(i-1);
@@ -103,7 +78,7 @@ int solve()
         order.push(now);
         used.insert(i);
     }
-    Point top=order.top();
+    Point2f top=order.top();
     order.pop();
     while(!order.empty())
     {
@@ -114,13 +89,13 @@ int solve()
     order.push(points[(int)points.size()-1]);
     for(int i=(int)points.size()-1;i>=1;i-=1)
     {
-        const Point &now=points[i-1];
+        const Point2f &now=points[i-1];
         if(used.count(i)) continue;
         while((int)order.size()>=2)
         {
-            Point point=order.top();
+            Point2f point=order.top();
             order.pop();
-            Point origin=order.top();
+            Point2f origin=order.top();
             if(relatively(origin,now-origin,point)<=0)
             {
                 used.erase(i-1);
@@ -145,7 +120,5 @@ int solve()
     }
     return 0;
 }
-int main()
-{
-    return solve();
-}
+
+} // namespace convex_hull
