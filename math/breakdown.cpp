@@ -1,3 +1,9 @@
+/*
+
+breakdown_to_prime_factor
+breakdown_to_prime_factor 质因数分解
+
+*/
 // 代码来源：OI-Wiki
 
 #include<vector>

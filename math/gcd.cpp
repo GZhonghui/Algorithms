@@ -1,6 +1,7 @@
 /*
 
 euclidean algorithm 欧几里得算法（辗转相除法）
+euclidean_algorithm 欧几里得算法 辗转相除法
 用于求最大公因数和最小公倍数
 
 */

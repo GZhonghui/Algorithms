@@ -1,3 +1,9 @@
+/*
+
+euler_quick_power (自己取的名字) 欧拉降幂
+
+*/
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>

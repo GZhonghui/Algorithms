@@ -1,3 +1,11 @@
+/*
+
+eulers_totient_function 欧拉函数
+## 欧拉函数
+欧拉总计函数，或者φ函数
+
+*/
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>

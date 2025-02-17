@@ -13,8 +13,17 @@
 线性求逆元
 在线性时间内，求出[1,n]内所有数字的逆元（比上面两种方法要快）
 
-*/
+inverse_element 逆元
 
+## 分数如何取模
+求：$R = \frac{P}{Q} \pmod{998244353}$  
+做法是求解模线性方程：  
+$R \times Q \equiv P \pmod{998244353}$  
+$R \equiv P \times Q^{-1} \pmod{998244353}$  
+可以看出：只要算出$Q$的逆元就可以了；$P$在计算过程中是可以取模的  
+例题：[Another Shuffle Window](https://atcoder.jp/contests/abc380/tasks/abc380_g)
+
+*/
 
 #include <algorithm>
 #include <cstdint>

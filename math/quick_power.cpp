@@ -1,3 +1,10 @@
+/*
+
+# 快速幂
+quick_power 快速幂
+
+*/
+
 #include<algorithm>
 #include<cstdio>
 #include<cstdint>
