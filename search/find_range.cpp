@@ -1,3 +1,9 @@
+/*
+
+二分查找范围
+
+*/
+
 #include <algorithm>
 #include <cstdint>
 
