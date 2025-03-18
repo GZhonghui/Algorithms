@@ -1,9 +1,4 @@
-# 图论
-
-- lowest_common_ancestor 最近公共祖先
-- Tarjan (Tarjan's strongly connected components algorithm) 强连通分量
-- Eulerian path (Eulerian graph) 欧拉回路，一笔画问题
-- bipartite graph 二分图相关
+/*
 
 ## 函数图 Functional Graph
 一种特殊的有向图（Directed Graph），其中每个节点恰好有一个出边（out-degree = 1）  
@@ -14,3 +9,13 @@
 例题：  
 - **Reachability in Functional Graph** https://atcoder.jp/contests/abc357/tasks/abc357_e
 - **Count Arrays** https://atcoder.jp/contests/abc387/tasks/abc387_f
+
+*/
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+namespace functional_graph {
+
+} // namespace functional_graph

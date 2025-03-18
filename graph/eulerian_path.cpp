@@ -1,3 +1,9 @@
+/*
+
+Eulerian path (Eulerian graph) 欧拉回路，一笔画问题
+
+*/
+
 #include <cstdio>
 #include <cassert>
 #include <vector>
