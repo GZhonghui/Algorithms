@@ -1,3 +1,9 @@
+/*
+
+## palindromic_tree
+回文自动机（简称PAM，又称回文树）
+
+*/
 #include<iostream>
 #include<cstdio>
 #include<algorithm>

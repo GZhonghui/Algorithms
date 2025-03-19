@@ -1,3 +1,12 @@
+/*
+
+## suffix_automaton
+后缀自动机
+
+后缀数组 & LCP数组
+
+*/
+
 #include<iostream>
 #include<cstring>
 #include<cstdio>

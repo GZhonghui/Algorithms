@@ -1,3 +1,9 @@
+/*
+
+Manacher（马拉车算法）
+
+*/
+
 #include<iostream>
 #include<cstdio>
 #include<algorithm>
