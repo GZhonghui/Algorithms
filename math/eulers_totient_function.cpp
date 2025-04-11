@@ -4,6 +4,8 @@ eulers_totient_function 欧拉函数
 ## 欧拉函数
 欧拉总计函数，或者φ函数
 
+TODO: 继续整理
+
 */
 
 #include<iostream>
@@ -23,8 +25,4 @@ int get_phi(int n)
     }
     if(n!=1) ans-=ans/n;
     return ans;
-}
-int main()
-{
-    return 0;
 }

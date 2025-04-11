@@ -1,26 +1,22 @@
 /*
 
 # 快速幂
-quick_power 快速幂
+quick_power
 
 */
 
-#include<algorithm>
-#include<cstdio>
-#include<cstdint>
-#include<iostream>
+#include <algorithm>
+#include <cstdint>
 
-const uint64_t mod = 1e9+7;
-
-uint64_t pow(uint64_t base, uint64_t times)
+uint64_t pow(uint64_t base, uint64_t times, uint64_t mod = 1e9+7)
 {
     if(times == 0) return 1;
     if(times == 1) return base;
 
-    uint64_t ans = pow(base, times>>1) % mod;
+    uint64_t ans = pow(base, times>>1, mod) % mod;
     
     ans = ans * ans % mod;
-    if(times % 2) ans = ans * base % mod;
+    if(times & 1) ans = ans * base % mod;
 
     return ans;
 }

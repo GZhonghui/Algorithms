@@ -1,6 +1,7 @@
 /*
 
 euler_quick_power (自己取的名字) 欧拉降幂
+TODO: 继续整理 暂时还不能用
 
 */
 
@@ -55,8 +56,4 @@ int dfs(int x,int p)
     if(x>=Cnt) return Num;
     if(p==1) return 1;
     return pow_mod(Num,dfs(x+1,get_phi(p)),p);
-}
-int main()
-{
-    return 0;
 }
