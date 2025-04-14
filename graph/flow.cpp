@@ -23,7 +23,7 @@ min cost max flow 最小费用最大网络流
 namespace max_flow_dinic {
 using namespace std;
 
-const int maxn=1024;
+const int maxn=1024; // 节点数
 const int inf=0xffffff;
 
 struct Edge
@@ -35,7 +35,7 @@ struct Edge
 
 class Dinic
 {
-public:
+protected:
     vector<Edge> edges;
     vector<int> G[maxn];
     int s,t,d[maxn],cur[maxn];
@@ -106,6 +106,7 @@ protected:
         }
         return flow;
     }
+public:
     int maxFlow()
     {
         int ans=0;
@@ -135,7 +136,7 @@ int dinic_example()
 namespace min_cost_max_flow_dinic {
 using namespace std;
 
-const int maxn=256;
+const int maxn=256; // 节点数
 const int inf=0xffffff;
 
 struct Edge
@@ -149,7 +150,7 @@ struct Edge
 
 class Dinic
 {
-public:
+protected:
     vector<Edge> edges;
     vector<int> G[maxn];
     bool vis[maxn],inq[maxn];
@@ -217,6 +218,7 @@ protected:
         }
         return true;
     }
+public:
     int MinCost()
     {
         int flow=0,cost=0;
